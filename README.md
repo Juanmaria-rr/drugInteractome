@@ -22,8 +22,3 @@ This repository contains code for a drug target discovery project aimed at integ
 5. 🚀 **What can be done with the generated dataset?**
    The code produces a curated dataset with drug annotations for target interactors, indicating the availability of drugs for specific diseases. Researchers and practitioners can leverage this dataset to explore potential drug targets, identify novel therapeutic options, and advance drug target discovery efforts.
 
-## Getting Started
-
-To get started with the code, follow the instructions below:
-
-1. 🔗 Clone the repository:
