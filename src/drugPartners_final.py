@@ -49,25 +49,23 @@ spark = (
 ### https://platform.opentargets.org/downloads/data:
 
 ### Target - molecular interactions dataset
-interactors_path = (
-    "/Users/juanr/Desktop/Target_Engine/data_download/december2022/interaction/"
-)
+interactors_path = "pathToInteraction"
 interact_db = spark.read.parquet(interactors_path)
 
 ### Disease/Phenotype dataset
-disease_path = "/Users/juanr/Desktop/Target_Engine/data_download/december2022/diseases/"
+disease_path = "pathToDisease"
 diseases = spark.read.parquet(disease_path)
 
 ### Target dataset
-target_path = "/Users/juanr/Desktop/Target_Engine/data_download/december2022/targets/"
+target_path = "pathToTarget"
 target = spark.read.parquet(target_path)
 
 ### Drug dataset
-molecule_path = "/Users/juanr/Desktop/MR_Maya/Downloaded_20230110/molecule/"
+molecule_path = "pathToMolecule"
 molecule = spark.read.parquet(molecule_path)
 
 ### Drug - indications dataset
-indication_path = "/Users/juanr/Desktop/MR_Maya/Downloaded_20230110/indication/"
+indication_path = "pathToIndication"
 indication = spark.read.parquet(indication_path)
 
 ### load symbols to complement EnsemblID
@@ -81,7 +79,7 @@ diseases_name = diseases.select(
 )
 
 ### Load Direct Score data
-overallDirecAssocScore_path = "/Users/juanr/Desktop/MR_Maya/Downloaded_20230110/assocOverallDirectJanuary2023/associationByOverallDirect"
+overallDirecAssocScore_path = "pathToAssociationByOverallDirect"
 overallDirecAssocScore = spark.read.parquet(overallDirecAssocScore_path)
 ### annotate Direct score
 oaDirectScore = overallDirecAssocScore.select(
@@ -91,9 +89,7 @@ oaDirectScore = overallDirecAssocScore.select(
 )
 
 ### Load Direct overall
-direcAssoc_path = (
-    "/Users/juanr/Desktop/MR_Maya/Downloaded_20230110/associationByDatasourceDirect/"
-)
+direcAssoc_path = "pathToAssociationByDatasourceDirect/"
 direcAssoc = spark.read.parquet(direcAssoc_path)
 ### annotate which are the supporting datasourceId
 targetDirectAssoc = (
@@ -108,7 +104,7 @@ targetDirectAssoc = (
 
 ##### Dataset format curation #####
 ### Read original dataset with all target-trait pairs per study
-path = "/Users/juanr/Desktop/MR_Maya/MRdrug20230123_Analysis.tsv"
+path = "pathToMRDataset"
 df = spark.read.csv(path, sep=r"\t", header=True)
 
 ### convert from string to array
